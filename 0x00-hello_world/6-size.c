@@ -1,24 +1,20 @@
 #include <stdio.h>
 
 /**
-*main - The program starts
+* main : The program starts
 *
-*Description : This program prints somthing 
+* Description : This program uses sizeof function 
 *
-*Return : Always main returns 0
+* return : Always main returns 0
 */
 
 int main(void)
 {
-char c 
-int i
-long int li
-long long int lli
-
-printf("Size of a char: ", sizof(c));
-printf("Size of an int: ", sizof(i));
-printf("Size of a long int: ", sizof(li));
-printf("Size of a long long int ", size(lli));
+printf("Size of a char: %lu byte(s)\n", sizof(char));
+printf("Size of an int: %lu byte(s)\n", sizof(int));
+printf("Size of a long int: %lu byte(s)\n", sizeof(long int));
+printf("Size of a long long int: %lu byte(s)\n", size(long long int));
+printf("Size of a float: %lu byte(s)\n", size(float));
 
 return (0);
 }
