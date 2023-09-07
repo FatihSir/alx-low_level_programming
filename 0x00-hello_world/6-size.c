@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
-* main: The program starts
+* main - The program starts
 *
 * Description: This program uses sizeof function 
 *
-* return: Always main returns 0
+* Return: Always main returns 0
 */
 
 int main(void)
