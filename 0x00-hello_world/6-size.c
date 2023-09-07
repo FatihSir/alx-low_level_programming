@@ -3,11 +3,10 @@
 /**
 * main - The program starts
 *
-* Description: This program uses sizeof function 
+* Description: This program uses sizeof function
 *
 * Return: Always main returns 0
 */
-
 int main(void)
 {
 	printf("Size of a char: %lu byte(s)\n", sizeof(char));
