@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* _add - program entry
+* add - program entry
 *
 * Describtion: The program adds 2 numbers
 *
