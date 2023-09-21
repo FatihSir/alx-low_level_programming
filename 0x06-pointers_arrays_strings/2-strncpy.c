@@ -19,7 +19,7 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		i++;
 	}
-	for (j = 0; j < n | src[j] == '\0'; j++)
+	for (j = 0; j < n || src[j] == '\0'; j++)
 	{
 		if (src[j] == '\0')
 			break;
