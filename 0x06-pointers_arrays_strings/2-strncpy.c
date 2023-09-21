@@ -21,11 +21,10 @@ char *_strncpy(char *dest, char *src, int n)
 	}
 	for (j = 0; j < n || src[j] == '\0'; j++)
 	{
-		if (src[j] == '\0')
-			break;
 		dest[i] = src[j];
 		i++;
+		if (j == n)
+			dest[i] = '\0';
 	}
-	dest[i] = '\0';
 	return (dest);
 }
