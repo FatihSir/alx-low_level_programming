@@ -9,7 +9,7 @@
 * Return: returns strings
 *
 */
-char *string_toupper(char *str)
+char *string_toupper(char *)
 {
 	for (int i = 0; str[i] != '\0'; ++i)
 	{
