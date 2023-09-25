@@ -22,7 +22,7 @@ char *_strstr(char *haystack, char *needle)
 				break;
 			}
 		}
-		if (!needle[n] == '\0')
+		if (!needle[n])
 		{
 			return (&haystack[m]);
 		}
