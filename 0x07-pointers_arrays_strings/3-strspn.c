@@ -21,9 +21,6 @@ unsigned int _strspn(char *s, char *accept)
 			if (s[i] == accept[j])
 			{
 				counter =  counter + 1;
-			}
-			else if (accept[j] == '\0')
-			{
 				break;
 			}
 		}
