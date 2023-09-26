@@ -7,7 +7,7 @@
 * @a: pointer the first element in the matrix
 * @size: the size of the square matrix
 *
-* Return: always returns nothing*
+* Return: always returns nothing
 */
 void print_diagsums(int *a, int size)
 {
@@ -19,7 +19,7 @@ void print_diagsums(int *a, int size)
 	{
 		sum_1 = sum_1 + a[i * size + i];
 	}
-	for (j = 0; j == size - 1; ++j)
+	for (j = 0; j = size - 1, i < size; ++i, --j)
 	{
 		sum_2 = sum_2 + a[i * size + i];
 	}
