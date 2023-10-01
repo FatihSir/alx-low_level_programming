@@ -27,7 +27,7 @@ int checker1(char *a, int c)
 		return (0);
 	else if (*a == 0)
 		return (1);
-	return (checker2(a + 1, c - 2));
+	return (checker1(a + 1, c - 2));
 }
 /**
 * is_palindrome - a function that returns 1 if a string is
@@ -41,6 +41,6 @@ int is_palindrome(char *s)
 {
 	int c;
 
-	c = checker1(s, 0);
-	return (checker2(s, c));
+	c = checker2(s, 0);
+	return (checker1(s, c));
 }
