@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* _sqrt_recursion - a function that returns the natural square root of a number
+* checker - a function that returns the natural square root of a number
 *
 * @n: number to be squaredi root
 * @a: integer to iterate util n
@@ -10,7 +10,7 @@ int checker(int n, int a)
 {
 	if (a * a == n)
 		return (a);
-	else if (a == n)
+	else if (a == n || n < 0)
 		return (-1);
 	else
 		return (checker(n, a + 1));
