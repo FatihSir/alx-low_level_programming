@@ -26,23 +26,17 @@ int main(int argc, char *argv[])
 		{
 			for (j = 0; argv[i][j] != '\0'; ++j)
 			{
-				if (!isdigit(argv[i][j]))
+				if (argv[i][j] < '0' || argv[i][j] > '9')
 				{
 					printf("Error\n");
 					return (1);
 				}
+				else
+					continue;
 			}
 
 			num = atoi(argv[i]);
-			if (num < 0)
-			{
-				printf("Error\n");
-				return (1);
-			}
-			else
-			{
-				sum = sum + num;
-			}
+			sum = sum + num;
 		}
 	}
 	printf("%d\n", sum);
