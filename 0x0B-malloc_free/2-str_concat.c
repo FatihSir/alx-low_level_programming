@@ -25,9 +25,9 @@ char *str_concat(char *s1, char *s2)
 		size_2++;
 	}
 	if (size_1 == 0)
-		s1= "";
+		s1 = "";
 	if (size_2 == 0)
-		s2= "";
+		s2 = "";
 	ptr = malloc(size_1 + size_2 + 1);
 	if (ptr == 0)
 		return (0);
