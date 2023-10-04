@@ -12,12 +12,17 @@
 char *_strdup(char *str)
 {
 	char *ptr;
+	int i, n = 0;
 
 	if (str == NULL)
 	{
 		return (0);
 	}
-	ptr = realloc(str, sizeof(*str));
+	for (i = 0; str[i] == '\0'; ++i)
+	{
+		n = n + 1;
+	}
+	ptr = realloc(str, sizeof(n) + 1);
 	if (ptr == NULL)
 		return (0);
 	else
