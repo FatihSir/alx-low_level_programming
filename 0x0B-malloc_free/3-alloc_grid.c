@@ -14,7 +14,7 @@ int **alloc_grid(int width, int height)
 
 	if (width == 0 || height == 0)
 		return (0);
-	ptr = calloc((widht * height), sizeof(*ptr));
+	ptr = calloc((width * height), sizeof(*ptr));
 	if (ptr == 0)
 	{
 		free(ptr);
