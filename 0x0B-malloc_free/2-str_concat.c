@@ -33,7 +33,7 @@ char *str_concat(char *s1, char *s2)
 		return (0);
 	for (i = 0; i < size_1; ++i)
 		ptr[i] = s1[i];
-	for (j = size_1; j < size_2; ++j)
+	for (j = size_1; j < size_2 + size_1; ++j)
 		ptr[j] = s2[j];
 	ptr[size_2] = '\0';
 	return (ptr);
