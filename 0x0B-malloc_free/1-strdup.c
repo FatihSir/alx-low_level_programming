@@ -22,13 +22,12 @@ char *_strdup(char *str)
 	{
 		n = n + 1;
 	}
-	ptr = malloc(n * sizeof(*str) + 1);
+	ptr = malloc(n * sizeof(*str) + 13);
 	if (ptr == 0)
 		return (0);
-	else
-		for (i = 0; i < n; ++i)
-		{
-			ptr[i] = str[i];
-		}
+	for (i = 0; i < n; ++i)
+	{
+		ptr[i] = str[i];
+	}
 	return (ptr);
 }
