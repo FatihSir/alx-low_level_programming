@@ -22,7 +22,7 @@ char *_strdup(char *str)
 	{
 		n = n + 1;
 	}
-	ptr = realloc(str, sizeof(n) + 8);
+	ptr = realloc(str, sizeof(n) + 9);
 	if (ptr == NULL)
 		return (0);
 	else
