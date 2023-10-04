@@ -24,9 +24,9 @@ char *str_concat(char *s1, char *s2)
 	{
 		size_2++;
 	}
-	if (s1 == '\0')
+	if (s1 == NULL)
 		s1 = "";
-	if (s2 == '\0')
+	if (s2 == NULL)
 		s2 = "";
 	ptr = malloc(size_1 + size_2 + 1);
 	if (ptr == 0)
