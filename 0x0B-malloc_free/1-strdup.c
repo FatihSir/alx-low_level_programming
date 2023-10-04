@@ -22,9 +22,12 @@ char *_strdup(char *str)
 	{
 		n = n + 1;
 	}
-	ptr = realloc(str, sizeof(n) + 9);
+	ptr = malloc(n * sizeof(*str) + 1);
 	if (ptr == NULL)
 		return (0);
-	else
-		return (ptr);
+	for (i = 0; i < n; ++i)
+	{
+		ptr[i] = str[i];
+	}
+	return (ptr);
 }
