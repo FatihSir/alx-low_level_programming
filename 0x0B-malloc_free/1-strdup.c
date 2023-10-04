@@ -17,7 +17,7 @@ char *_strdup(char *str)
 	{
 		return (0);
 	}
-	ptr = realloc(str, sizeof(str));
+	ptr = realloc(str, sizeof(*str));
 	if (ptr == NULL)
 		return (0);
 	else
