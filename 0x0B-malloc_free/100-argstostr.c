@@ -12,15 +12,29 @@ char *argstostr(int ac, char **av)
 {
 	char *ptr;
 	int i;
+	int j;
+	int n = 0;
+	int m = 0;
 
 	if (ac == 0 || av == NULL)
 		return (0);
-	if (ptr == NULL)
-		return (0);
-	ptr = (char *) malloc(ac * sizeof(char));
-	for (i = 1; i < ac; ++i)
+	for (i = 0; i < ac; ++i)
 	{
-		ptr[i - 1] = **(av + i);
+		n = n + strlen(av[i]) + 1;
 	}
+
+	ptr = (char *) malloc(n * sizeof(char) + 1);
+
+	for (i = 0; i < ac; ++i)
+	{
+		for (j = 0; av[i][j] != '\0'; ++j)
+		{
+			ptr[m] = av[i][j];
+			m = m + 1;
+		}
+		ptr[m] = '\n';
+		++m;
+	}
+	ptr[m] = '\0';
 	return (ptr);
 }
