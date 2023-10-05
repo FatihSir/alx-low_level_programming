@@ -8,11 +8,12 @@
 */
 char **strtow(char *str)
 {
-	char *ptr;
+	char **ptr;
 
-	if (str == NULL || str == "")
+	if (str == NULL || *str == '\0')
 		return (0);
+	ptr = (char **)malloc(18 * sizeof(char *));
 	if (ptr == NULL)
 		return (0);
-	return (*ptr);
+	return (ptr);
 }
