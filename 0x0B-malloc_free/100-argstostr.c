@@ -10,17 +10,17 @@
 */
 char *argstostr(int ac, char **av)
 {
-	char **ptr;
+	char *ptr;
+	int i;
 
 	if (ac == 0 || av == NULL)
 		return (0);
 	if (ptr == NULL)
 		return (0);
-	ptr = malloc(ac * sizeof(char));
-	else 
-		for (i = 1; i < ac; ++i)
-		{
-			ptr[i - 1] = av[i];
-		}
+	ptr = (char *) malloc(ac * sizeof(char));
+	for (i = 1; i < ac; ++i)
+	{
+		ptr[i - 1] = **(av + i);
+	}
 	return (ptr);
 }
