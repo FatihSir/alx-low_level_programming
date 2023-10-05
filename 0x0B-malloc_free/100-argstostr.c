@@ -16,5 +16,11 @@ char *argstostr(int ac, char **av)
 		return (0);
 	if (ptr == NULL)
 		return (0);
-	return (*ptr);
+	ptr = malloc(ac * sizeof(char));
+	else 
+		for (i = 1; i < ac; ++i)
+		{
+			ptr[i - 1] = av[i];
+		}
+	return (ptr);
 }
