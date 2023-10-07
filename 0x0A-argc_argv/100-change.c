@@ -15,7 +15,7 @@ int sum_n(int *a)
 
 	for (i = 0; i < 5; ++i)
 	{
-		sum = sum + *(a + i);
+		sum = sum + a[i];
 	}
 	return (sum);
 }
