@@ -33,9 +33,11 @@ int sum_n(int *a)
 */
 int main(int argc, char *argv[])
 {
+	int coins[] = {25, 10, 5, 2, 1};
 	int n_coints[4] = {0};
 	int num;
 	int sum = 0;
+	int i;
 
 	if (argc != 2)
 	{
@@ -45,36 +47,12 @@ int main(int argc, char *argv[])
 	num = atoi(argv[1]);
 	if (num <= 0)
 	{
-		return (printf("0"), 0);
+		return (printf("0\n"), 0);
 	}
-	if (num >= 25)
+	for (i = 0; i < 5; ++i)
 	{
-		n_coints[0] = num / 25;
-		num = num % 25;
-	}
-	else if (num >= 10 && num < 25)
-	{
-		n_coints[1] = num / 10;
-		num = num % 10;
-	}
-	else if (num >= 5 && num < 10)
-	{
-		n_coints[2] = num / 5;
-		num = num % 5;
-	}
-	else if (num >= 2 && num < 5)
-	{
-		n_coints[3] = num / 2;
-		num = num % 2;
-	}
-	else if (num == 1)
-	{
-		n_coints[4] = 1;
-	}
-	else if (num == 0)
-	{
-		sum = sum_n(n_coints);
-		return (sum);
+		n_coints[i] = num / coins[i];
+		num = num % coins[i];
 	}
 	sum = sum_n(n_coints);
 	return (sum);
