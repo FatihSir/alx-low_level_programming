@@ -34,7 +34,7 @@ int sum_n(int *a)
 int main(int argc, char *argv[])
 {
 	int coins[] = {25, 10, 5, 2, 1};
-	int n_coints[4] = {0};
+	int n_coints[5] = {0};
 	int num;
 	int sum = 0;
 	int i;
@@ -47,7 +47,8 @@ int main(int argc, char *argv[])
 	num = atoi(argv[1]);
 	if (num <= 0)
 	{
-		return (printf("0\n"), 0);
+		printf("0\n");
+		return (0);
 	}
 	for (i = 0; i < 5; ++i)
 	{
