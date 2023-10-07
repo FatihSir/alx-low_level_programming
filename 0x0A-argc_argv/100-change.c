@@ -56,5 +56,5 @@ int main(int argc, char *argv[])
 		num = num % coins[i];
 	}
 	sum = sum_n(n_coints);
-	return (sum);
+	return (0);
 }
