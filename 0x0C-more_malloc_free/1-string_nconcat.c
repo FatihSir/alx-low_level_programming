@@ -16,10 +16,10 @@ char *conc_1(int s1_length, int s2_length, char *s1, char *s2)
 	int i, j;
 	char *conc;
 
-	conc = malloc((sizeof(char) * (s1_length + s2_length)) + 1);
+	conc = malloc((s1_length + s2_length + 1) * sizeof(char));
 	if (conc == NULL)
 	{
-		return (0);
+		return (NULL);
 	}
 	for (i = 0; i < s1_length; ++i)
 	{
@@ -49,10 +49,10 @@ char *conc_2(int s1_length, unsigned int n, char *s1, char *s2)
 	int i, j;
 	char *conc;
 
-	conc = malloc((sizeof(char) * (s1_length + n)) +  1);
+	conc = malloc((s1_length + n + 1) * sizeof(char));
 	if (conc == NULL)
 	{
-		return (0);
+		return (NULL);
 	}
 	for (i = 0; i < s1_length; ++i)
 	{
