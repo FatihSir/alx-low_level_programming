@@ -45,14 +45,14 @@ unsigned int mul_1(char *num_1, char *num_2)
 	return (multi);
 }
 /**
-* mul - a program that multiplies two positive numbers.
+* main - a program that multiplies two positive numbers.
 *
 * @argv: array of postive numbers
 * @argc: conter
 *
 * Return: returns a multiplication of two positive numbers
 */
-unsigned int mul(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	char *num_1;
 	char *num_2;
@@ -69,5 +69,5 @@ unsigned int mul(int argc, char *argv[])
 	_isdigit(num_1, num_2);
 	multi = mul_1(num_1, num_2);
 	printf("%u\n", multi);
-	return (multi);
+	return (0);
 }
