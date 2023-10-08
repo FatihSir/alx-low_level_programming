@@ -37,7 +37,7 @@ void _isdigit(char *num_1, char *num_2)
 */
 unsigned int mul_1(char *num_1, char *num_2)
 {
-	unsigned int a, b, mul;
+	int a, b, mul;
 
 	a = atoi(num_1);
 	b = atoi(num_2);
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 {
 	char *num_1;
 	char *num_2;
-	unsigned int mul;
+	int mul;
 
 	if (argc != 3)
 	{
