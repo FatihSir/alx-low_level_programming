@@ -35,7 +35,7 @@ void _isdigit(char *num_1, char *num_2)
 *
 * Return: Return: returns a multiplication of two positive numbers.
 */
-unsigned int mul_1(char *num_1, char *num_2)
+int mul_1(char *num_1, char *num_2)
 {
 	int a, b, mul = 0;
 
