@@ -16,10 +16,10 @@ char *conc_1(int s1_length, int s2_length, char *s1, char *s2)
 	int i, j;
 	char *conc;
 
-	conc = malloc(sizeof(char) * (s1_length + s2_length + 1));
+	conc = malloc((sizeof(char) * (s1_length + s2_length)) + 1);
 	if (conc == NULL)
 	{
-		return (NULL);
+		return (0);
 	}
 	for (i = 0; i < s1_length; ++i)
 	{
@@ -49,10 +49,10 @@ char *conc_2(int s1_length, unsigned int n, char *s1, char *s2)
 	int i, j;
 	char *conc;
 
-	conc = malloc(sizeof(char) * (s1_length + n + 1));
+	conc = malloc((sizeof(char) * (s1_length + n)) +  1);
 	if (conc == NULL)
 	{
-		return (NULL);
+		return (0);
 	}
 	for (i = 0; i < s1_length; ++i)
 	{
@@ -62,7 +62,7 @@ char *conc_2(int s1_length, unsigned int n, char *s1, char *s2)
 	{
 		conc[i + j] = s2[j];
 	}
-	conc[i + n] = '\0';
+	conc[i + j] = '\0';
 	return (conc);
 }
 /**
@@ -99,9 +99,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else if (s2[0] == '\0')
 	{
-		conc = malloc(sizeof(char) * (s1_length + 1));
+		conc = malloc((sizeof(char) * s1_length) + 1);
 		if (conc == NULL)
-			return (NULL);
+			return (0);
 		for (i = 0; i < s1_length; ++i)
 		{
 			conc[i] = s1[i];
