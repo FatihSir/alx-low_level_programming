@@ -11,9 +11,10 @@ void *malloc_checked(unsigned int b)
 {
 	unsigned int *ptr;
 
-	ptr = malloc(sizeof(unsigned int));
+	ptr = malloc(sizeof(unsigned int) * b);
 	if (ptr == NULL)
 	{
+		printf("%d\n", 98);
 		exit (3);
 	}
 	return (ptr);
