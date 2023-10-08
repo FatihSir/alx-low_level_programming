@@ -37,12 +37,12 @@ void _isdigit(char *num_1, char *num_2)
 */
 unsigned int mul_1(char *num_1, char *num_2)
 {
-	unsigned int a, b, multi;
+	unsigned int a, b, mul;
 
 	a = atoi(num_1);
 	b = atoi(num_2);
-	multi = a * b;
-	return (multi);
+	mul = a * b;
+	return (mul);
 }
 /**
 * main - a program that multiplies two positive numbers.
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 {
 	char *num_1;
 	char *num_2;
-	unsigned int multi;
+	unsigned int mul;
 
 	if (argc != 3)
 	{
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 	num_1 = argv[1];
 	num_2 = argv[2];
 	_isdigit(num_1, num_2);
-	multi = mul_1(num_1, num_2);
-	printf("%u\n", multi);
+	mul = mul_1(num_1, num_2);
+	printf("%u\n", mul);
 	return (0);
 }
