@@ -13,7 +13,7 @@
 */
 char *conc_1(unsigned int s1_len, unsigned int s2_len, char *s1, char *s2)
 {
-	int i, j;
+	unsigned int i, j;
 	char *conc;
 
 	conc = malloc((s1_len + s2_len + 1) * sizeof(char));
@@ -46,7 +46,7 @@ char *conc_1(unsigned int s1_len, unsigned int s2_len, char *s1, char *s2)
 */
 char *conc_2(unsigned int s1_len, unsigned int n, char *s1, char *s2)
 {
-	int i, j;
+	unsigned int i, j;
 	char *conc;
 
 	conc = malloc((s1_len + n + 1) * sizeof(char));
@@ -81,7 +81,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int s1_len = 0;
 	unsigned int s2_len = 0;
 	char *conc;
-	int i;
+	unsigned int i;
 	int l;
 	int m;
 
