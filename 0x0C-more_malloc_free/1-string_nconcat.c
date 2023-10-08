@@ -11,7 +11,8 @@
 * which contains s1, followed by the first n bytes of s2, and null terminated
 *
 */
-char *conc_1(int s1_length, int s2_length, char *s1, char *s2)
+char *conc_1(unsigned int s1_length, unsigned int s2_length
+, char *s1, char *s2)
 {
 	int i, j;
 	char *conc;
@@ -19,7 +20,7 @@ char *conc_1(int s1_length, int s2_length, char *s1, char *s2)
 	conc = malloc((s1_length + s2_length + 1) * sizeof(char));
 	if (conc == NULL)
 	{
-		return (NULL);
+		return (0);
 	}
 	for (i = 0; i < s1_length; ++i)
 	{
@@ -44,7 +45,7 @@ char *conc_1(int s1_length, int s2_length, char *s1, char *s2)
 * which contains s1, followed by the first n bytes of s2, and null terminated
 *
 */
-char *conc_2(int s1_length, unsigned int n, char *s1, char *s2)
+char *conc_2(unsigned int s1_length, unsigned int n, char *s1, char *s2)
 {
 	int i, j;
 	char *conc;
@@ -52,7 +53,7 @@ char *conc_2(int s1_length, unsigned int n, char *s1, char *s2)
 	conc = malloc((s1_length + n + 1) * sizeof(char));
 	if (conc == NULL)
 	{
-		return (NULL);
+		return (0);
 	}
 	for (i = 0; i < s1_length; ++i)
 	{
@@ -78,11 +79,10 @@ char *conc_2(int s1_length, unsigned int n, char *s1, char *s2)
 */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int s1_length;
-	int s2_length;
+	unsigned int s1_length;
+	unsigned int s2_length;
 	char *conc;
 	int i;
-	int j;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -92,14 +92,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	s1_length = strlen(s1);
 	s2_length = strlen(s2);
 
-	if (n >= (unsigned int)s2_length)
+	if (n >= s2_length)
 	{
 		conc = conc_1(s1_length, s2_length, s1, s2);
 		return (conc);
 	}
 	else if (s2[0] == '\0')
 	{
-		conc = malloc((sizeof(char) * s1_length) + 1);
+		conc = malloc(sizeof(char) * (s1_length + 1));
 		if (conc == NULL)
 			return (0);
 		for (i = 0; i < s1_length; ++i)
