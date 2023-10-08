@@ -78,8 +78,8 @@ char *conc_2(unsigned int s1_len, unsigned int n, char *s1, char *s2)
 */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int s1_len;
-	unsigned int s2_len;
+	unsigned int s1_len = 0;
+	unsigned int s2_len = 0;
 	char *conc;
 	int i;
 	int l;
