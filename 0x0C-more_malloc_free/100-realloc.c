@@ -11,7 +11,7 @@ void *_realloc_1(unsigned int new_size)
 {
 	void *new_ptr;
 
-	new_ptr = malloc(new_size * sizeof(unsigned int));
+	new_ptr = malloc(new_size);
 	if (new_ptr == NULL)
 		return (0);
 	return (new_ptr);
@@ -27,7 +27,6 @@ void *_realloc_1(unsigned int new_size)
 void *_realloc_2(void *ptr)
 {
 	free(ptr);
-	return (0);
 }
 /**
 * _realloc_3 - a function that allocates a memory block using malloc and free
@@ -41,17 +40,13 @@ void *_realloc_2(void *ptr)
 */
 void *_realloc_3(void *ptr, unsigned int new_size, unsigned int old_size)
 {
-	unsigned int *new_ptr;
-	unsigned int *ptr_1 = ptr;
-	unsigned int i;
+	void *new_ptr;
+	unsigned int min_size = (old_size < new_size) ? old_size : new_size;
 
-	new_ptr = malloc(new_size * sizeof(unsigned int));
+	new_ptr = malloc(new_size);
 	if (new_ptr == NULL)
 		return (0);
-	for (i = 0; i <= old_size; ++i)
-	{
-		new_ptr[i] = ptr_1[i];
-	}
+	memcpy(new_ptr, ptr, min_size);
 	free(ptr);
 	return (new_ptr);
 }
@@ -86,6 +81,5 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		new_ptr = _realloc_3(ptr, new_size, old_size);
 		return (new_ptr);
 	}
-	return (new_ptr);
-
+	return (ptr);
 }
