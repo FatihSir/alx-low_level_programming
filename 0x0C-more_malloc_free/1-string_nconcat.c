@@ -11,8 +11,7 @@
 * which contains s1, followed by the first n bytes of s2, and null terminated
 *
 */
-char *conc_1(unsigned int s1_length, unsigned int s2_length
-, char *s1, char *s2)
+char *conc_1(unsigned int s1_length, unsigned int s2_length, char *s1, char *s2)
 {
 	int i, j;
 	char *conc;
@@ -99,7 +98,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else if (s2[0] == '\0')
 	{
-		conc = malloc(sizeof(char) * (s1_length + 1));
+		conc = malloc((sizeof(char) * s1_length) + 1);
 		if (conc == NULL)
 			return (0);
 		for (i = 0; i < s1_length; ++i)
