@@ -40,7 +40,7 @@ void *_realloc_2(void *ptr)
 */
 void *_realloc_3(void *ptr, unsigned int new_size, unsigned int old_size)
 {
-	void *new_ptr;
+	char *new_ptr;
 	unsigned int min_size = (old_size < new_size) ? old_size : new_size;
 
 	new_ptr = malloc(new_size);
