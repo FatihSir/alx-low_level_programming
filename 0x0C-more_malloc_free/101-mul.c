@@ -6,7 +6,7 @@
 * @num_2: the second number
 *
 */
-int _isdigit(char *num_1, char *num_2)
+void _isdigit(char *num_1, char *num_2)
 {
 	int i;
 
@@ -26,7 +26,6 @@ int _isdigit(char *num_1, char *num_2)
 			exit(3);
 		}
 	}
-	return (0);
 }
 /**
 * mul_1 - a program that multiplies two positive numbers
