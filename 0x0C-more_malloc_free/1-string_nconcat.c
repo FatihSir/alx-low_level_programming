@@ -92,7 +92,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	s1_length = strlen(s1);
 	s2_length = strlen(s2);
 
-	if (n >= s2_length)
+	if (n >= (unsigned int)s2_length)
 	{
 		conc = conc_1(s1_length, s2_length, s1, s2);
 		return (conc);
