@@ -27,6 +27,7 @@ void *_realloc_1(unsigned int new_size)
 void *_realloc_2(void *ptr)
 {
 	free(ptr);
+	return (0);
 }
 /**
 * _realloc_3 - a function that allocates a memory block using malloc and free
