@@ -6,7 +6,7 @@
 * @num_2: the second number
 *
 */
-void _isdigit(char *num_1, char *num_2)
+int _isdigit(char *num_1, char *num_2)
 {
 	int i;
 
@@ -26,6 +26,7 @@ void _isdigit(char *num_1, char *num_2)
 			exit(3);
 		}
 	}
+	return (0);
 }
 /**
 * mul_1 - a program that multiplies two positive numbers
@@ -37,7 +38,7 @@ void _isdigit(char *num_1, char *num_2)
 */
 unsigned int mul_1(char *num_1, char *num_2)
 {
-	int a, b, mul;
+	int a, b, mul = 0;
 
 	a = atoi(num_1);
 	b = atoi(num_2);
@@ -56,7 +57,7 @@ int main(int argc, char *argv[])
 {
 	char *num_1;
 	char *num_2;
-	int mul;
+	int mul = 0;
 
 	if (argc != 3)
 	{
@@ -68,6 +69,6 @@ int main(int argc, char *argv[])
 	num_2 = argv[2];
 	_isdigit(num_1, num_2);
 	mul = mul_1(num_1, num_2);
-	printf("%u\n", mul);
+	printf("%d\n", mul);
 	return (0);
 }
