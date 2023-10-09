@@ -6,7 +6,7 @@
 * @num_2: the second number
 *
 */
-void _isdigit(char *num_1, char *num_2)
+int _isdigit(char *num_1, char *num_2)
 {
 	int i;
 
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		printf("Error\n");
-		return (98);
+		exit(3);
 	}
 
 	num_1 = argv[1];
