@@ -47,6 +47,8 @@ void mul_1(char *num_1, char *num_2, mpz_t mul)
 	mpz_set_str(a, num_1, 10);
 	mpz_set_str(b, num_2, 10);
 	mpz_mul(mul, a, b);
+	mpz_clear(a);
+	mpz_clear(b);
 }
 /**
 * main - a program that multiplies two positive numbers.
@@ -75,5 +77,6 @@ int main(int argc, char *argv[])
 	_isdigit(num_1, num_2);
 	mul_1(num_1, num_2, mul);
 	gmp_printf("%Zd\n", mul);
+	mpz_clear(mul);
 	return (0);
 }
