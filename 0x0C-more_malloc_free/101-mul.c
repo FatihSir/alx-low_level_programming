@@ -26,6 +26,7 @@ int _isdigit(char *num_1, char *num_2)
 			return (98);
 		}
 	}
+	return (0);
 }
 /**
 * mul_1 - a program that multiplies two positive numbers
