@@ -37,9 +37,9 @@ int _isdigit(char *num_1, char *num_2)
 *
 * Return: Return: returns a multiplication of two positive numbers.
 */
-double mul_1(char *num_1, char *num_2)
+long long int mul_1(char *num_1, char *num_2)
 {
-	double a, b, mul = 0;
+	long long int a, b, mul = 0;
 
 	a = atoi(num_1);
 	b = atoi(num_2);
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 {
 	char *num_1;
 	char *num_2;
-	double mul = 0;
+	long long int mul = 0;
 
 	if (argc != 3)
 	{
@@ -70,6 +70,6 @@ int main(int argc, char *argv[])
 	num_2 = argv[2];
 	_isdigit(num_1, num_2);
 	mul = mul_1(num_1, num_2);
-	printf("%lf\n", mul);
+	printf("%lld\n", mul);
 	return (0);
 }
