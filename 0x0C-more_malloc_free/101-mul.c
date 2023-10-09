@@ -16,7 +16,7 @@ int _isdigit(char *num_1, char *num_2)
 		if (!isdigit(num_1[i]))
 		{
 			printf("Error\n");
-			exit(3);
+			exit(98);
 		}
 	}
 	for (i = 0; num_2[i] != '\0'; ++i)
@@ -24,7 +24,7 @@ int _isdigit(char *num_1, char *num_2)
 		if (!isdigit(num_2[i]))
 		{
 			printf("Error\n");
-			exit(3);
+			exit(98);
 		}
 	}
 	return (0);
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		printf("Error\n");
-		exit(3);
+		exit(98);
 	}
 
 	num_1 = argv[1];
