@@ -34,17 +34,19 @@ int _isdigit(char *num_1, char *num_2)
 *
 * @num_1: the first number
 * @num_2: the second number
+* @mul: the result of the multi
 *
 * Return: Return: returns a multiplication of two positive numbers.
 */
-int mul_1(char *num_1, char *num_2)
+void mul_1(char *num_1, char *num_2, mpz_t mul)
 {
-	int a, b, mul = 0;
+	mpz_t a, b;
 
-	a = atoi(num_1);
-	b = atoi(num_2);
-	mul = a * b;
-	return (mul);
+	mpz_init(a);
+	mpz_init(b);
+	mpz_set_str(a, num_1, 10);
+	mpz_set_str(b, num_2, 10);
+	mpz_mul(mul, a, b);
 }
 /**
 * main - a program that multiplies two positive numbers.
@@ -58,7 +60,9 @@ int main(int argc, char *argv[])
 {
 	char *num_1;
 	char *num_2;
-	int mul = 0;
+	mpz_t mul;
+
+	mpz_init(mul);
 
 	if (argc != 3)
 	{
@@ -69,7 +73,7 @@ int main(int argc, char *argv[])
 	num_1 = argv[1];
 	num_2 = argv[2];
 	_isdigit(num_1, num_2);
-	mul = mul_1(num_1, num_2);
-	printf("%d\n", mul);
+	mul_1(num_1, num_2, mul);
+	gmp_printf("%Zd\n", mul);
 	return (0);
 }

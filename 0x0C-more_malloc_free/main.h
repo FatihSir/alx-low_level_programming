@@ -1,6 +1,7 @@
 #ifndef MAIN_FILE
 #define MAIN_FILE
 
+#include <gmp.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
