@@ -5,6 +5,7 @@
 * @num_1: the first number
 * @num_2: the second number
 *
+* Return: return 0
 */
 int _isdigit(char *num_1, char *num_2)
 {
@@ -62,7 +63,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		printf("Error\n");
-		exit(3);
+		return (98);
 	}
 
 	num_1 = argv[1];
