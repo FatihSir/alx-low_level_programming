@@ -1,4 +1,4 @@
 #include "main.h"
-#ifndef
+#ifndef SIZE
 #define SIZE 1024
 #endif
