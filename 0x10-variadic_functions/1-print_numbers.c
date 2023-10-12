@@ -10,14 +10,9 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list args;
-	int i, s = 0;
+	int i, s;
 
 	va_start(args, n);
-	if (n == 0 || separator == NULL)
-	{
-		va_end(args);
-		exit(98);
-	}
 	for (i = 0; i < n; ++i)
 	{
 		s = va_arg(args, int);
