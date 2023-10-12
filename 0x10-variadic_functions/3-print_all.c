@@ -69,7 +69,7 @@ void print_all(const char * const format, ...)
 		{"s", print_string},
 		{NULL, NULL}
 	};
-	int i = 0, j = 0;
+	int i = 0, j;
 	char *sep = "";
 	va_list args;
 
