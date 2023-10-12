@@ -12,8 +12,6 @@
 * @format: pointer to the format
 * @ops: function pointer to call a specific function based on format
 */
-
-
 typedef struct tokens
 {
 	char *frmt;

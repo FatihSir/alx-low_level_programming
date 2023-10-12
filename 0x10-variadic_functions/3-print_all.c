@@ -47,9 +47,8 @@ void print_string(char *sep, va_list args)
 {
 	char *ptr = va_arg(args, char *);
 
-	switch ((int)(!ptr))
-		case 1:
-			ptr = "(nil)";
+	if (!ptr)
+		ptr = "(nil)";
 	printf("%s%s", sep, ptr);
 }
 
