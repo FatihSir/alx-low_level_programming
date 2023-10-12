@@ -1,5 +1,5 @@
-#ifndef MAIN_FILE
-#define MAIN_FILE
+#ifndef VARIADIC_FUNCTION_FILE
+#define VARIADIC_FUNCTION_FILE
 
 #include <stdio.h>
 #include <string.h>
