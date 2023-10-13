@@ -83,9 +83,9 @@ void print_all(const char * const format, ...)
 				tok[j].ops(sep, args);
 				sep = ", ";
 			}
-			j++;
+			++j;
 		}
-		i++;
+		++i;
 	}
 	printf("\n");
 	va_end(args);
