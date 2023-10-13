@@ -1,8 +1,4 @@
 #include "dog.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 /**
 * new_dog - Creates a new dog and stores a copy of name and owner.
 *
@@ -33,7 +29,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		free(name_copy);
 		free(new_dog);
-		return (0);
+		return (NULL);
 	}
 	new_dog->name = name_copy;
 	new_dog->age = age;
