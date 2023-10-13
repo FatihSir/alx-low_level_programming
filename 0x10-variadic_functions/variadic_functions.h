@@ -9,7 +9,7 @@
 /**
 * struct tokens - srtuct datatype
 *
-* @format: pointer to the format
+* @frmt: pointer to the format
 * @ops: function pointer to call a specific function based on format
 */
 typedef struct tokens
