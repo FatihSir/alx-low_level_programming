@@ -63,7 +63,7 @@ void print_all(const char * const format, ...)
 {
 	token_datatype tok[] = {
 		{"c", print_char},
-		{"¡", print_int},
+		{"i", print_int},
 		{"f", print_float},
 		{"s", print_string},
 		{NULL, NULL}
