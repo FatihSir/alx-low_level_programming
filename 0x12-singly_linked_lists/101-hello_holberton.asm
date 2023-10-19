@@ -1,4 +1,4 @@
-extern assem
+extern printf
 
 section .text
 global main
@@ -9,7 +9,7 @@ push rbp
 mov rdi, fmt
 mov rsi, msg
 mov rax, 0
-call assem
+call printf
 
 pop rbp
 
