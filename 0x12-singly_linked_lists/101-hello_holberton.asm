@@ -7,7 +7,7 @@ main:
 push rbp
 
 mov rdi, fmt
-mov rsi, txt
+mov rsi, msg
 mov rax, 0
 call assem
 
@@ -17,5 +17,5 @@ mov rax, 0
 ret
 
 section .data
-txt: db "Hello, Holberton", 0
+msg: db "Hello, Holberton", 0
 fmt: db "%s", 10, 0
