@@ -22,12 +22,17 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	/*checking if the memory allocation failed*/
 	if (new_node == NULL)
 		return (NULL);
-	/*Letting the new node pointing to NULL as it became the last node*/
-	new_node->next = NULL;
 	/*Asginning the value n to the node*/
 	new_node->n = n;
+	/*Letting the new node pointing to NULL as it became the last node*/
+	new_node->next = NULL;
+	if (*head == NULL)
+	{
+		*head == new_node;
+		return (new_node);
+	}
 	/*Iterating over the list to fint the last node which points to NULL*/
-	while (iter != NULL)
+	while (iter->next != NULL)
 		iter = iter->next;
 	/*Letting the last node pointing to the new_node*/
 	iter->next = new_node;
