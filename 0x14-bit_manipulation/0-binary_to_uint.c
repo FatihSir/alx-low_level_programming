@@ -35,7 +35,7 @@ unsigned int binary_to_uint(const char *b)
 	}
 	for (i = 0; i < len; ++i)
 	{
-		ops = (int)pow(n, i) * ptr[i];
+		ops = (int)_pow(n, i) * ptr[i];
 		b_toi = b_toi + ops;
 	}
 	return (b_toi);
