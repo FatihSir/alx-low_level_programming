@@ -1,1 +1,1 @@
-This is the first project in C
+Read me file
