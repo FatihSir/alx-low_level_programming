@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* _powe - a function that calculates base^power
+* _pow - a function that calculates base^power
 *
 * @base: the base number
 * @power: the power
