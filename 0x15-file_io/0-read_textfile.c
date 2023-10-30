@@ -29,7 +29,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			break;
 		}
 	}
-	if (fclose(ptr) != 0)
-	       return (0);	
+	fclose(ptr);
 	return (i);
 }
