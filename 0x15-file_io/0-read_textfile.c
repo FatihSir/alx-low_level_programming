@@ -22,12 +22,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	for (i = 0; i < letters; ++i)
 	{
 		c = fgetc(ptr);
-		if (c != '\0' || c != EOF)
+		if (c != EOF)
 			putchar(c);
 		else
 		{
 			break;
-			return (0);
 		}
 	}
 	return (i);
