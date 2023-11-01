@@ -18,21 +18,16 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Usage: cp file_from file_to\n");
 		return (97);
 	}
-	if (argv[1] == NULL || argv[2] == NULL)
-	{
-		printf("There is argument missing\n");
-		return (97);
-	}
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from < 0)
 	{
-		fprintf(stderr, "Error: Can\'t read from file NAME_OF_THE_FILE\n");
+		fprintf(stderr, "Error: Can\'t read from file %s\n", argv[1]);
 		return (98);
 	}
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to < 0)
 	{
-		fprintf(stderr, "Can\'t write to NAME_OF_THE_FILE\n");
+		fprintf(stderr, "Can\'t write to %s\n", argv[2]);
 		return (99);
 	}
 	while ((bytes_read = read(file_from, buffer, sizeof(buffer))) > 0)
