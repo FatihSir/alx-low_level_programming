@@ -34,9 +34,14 @@ int main(int argc, char *argv[])
 	{
 		write(file_to, buffer, bytes_read);
 	}
-	if (close(file_to) == -1 || close(file_from) == -1)
+	if (close(file_to) == -1)
 	{
-		fprintf(stderr, "Error: Can\'t close fd FD_VALUE\n");
+		fprintf(stderr, "Error: Can\'t close fd %d\n", file_to);
+		return (100);
+	}
+	if (close(file_from) == -1)
+	{
+		fprintf(stderr, "Error: Can\'t close fd %d\n", file_from);
 		return (100);
 	}
 	return (0);
