@@ -11,28 +11,34 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int ptr;
-	size_t i = 0;
-	size_t bytes_read;
+	ssize_t bytes_read;
 	char *buffer;
 
-	buffer = malloc((letters + 1)* sizeof(char));
+	buffer = malloc((letters + 1) * sizeof(char));
 	if (buffer == NULL)
 		return (0);
 	if (filename == NULL)
 		return (0);
 	ptr = open(filename, O_RDONLY);
 	if (ptr < 0)
+	{
+		free(buffer);
 		return (0);
-	while (letters > 0)
+	}
+	if (letters > 0)
 	{
 		bytes_read = read(ptr, buffer, sizeof(buffer));
 	}
+	if (bytes_read < -1)
+	{
+		free(buffer);
+		close(ptr);
+		return (0);
+	}
 	if (bytes_read > 0)
 	{
-		for (i = 0; i < bytes_read; ++i)
-		{
-			putchar(buffer[i]);
-		}
+		buffer[bytes_read] = '\0';
+		printf("%s", buffer);
 	}
 	close(ptr);
 	free(buffer);
