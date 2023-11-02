@@ -40,7 +40,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		buffer[bytes_read] = '\0';
 		if ((ssize_t)letters > bytes_read)
 			fprintf(stderr, "%s", buffer);
-		if ((ssize_t)letters <= bytes_read)
+		else
 			printf("%s", buffer);
 	}
 	close(ptr);
