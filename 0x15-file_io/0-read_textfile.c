@@ -10,23 +10,31 @@
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *ptr;
+	int ptr;
 	size_t i = 0;
-	char c;
+	size_t bytes_read;
+	char *buffer;
 
+	buffer = malloc((letters + 1)* sizeof(char));
+	if (buffer = NULL)
+		return (0);
 	if (filename == NULL)
 		return (0);
-	ptr = fopen(filename, "r");
-	if (ptr == NULL)
+	ptr = open(filename, O_RDONLY);
+	if (ptr < 0)
 		return (0);
-	while (i < letters)
+	while (letters > 0)
 	{
-		c = fgetc(ptr);
-		if (c == EOF)
-			break;
-		putchar(c);
-		++i;
+		bytes_read = read(ptr, buffer, sizeof(buffer));
 	}
-	fclose(ptr);
-	return (i);
+	if (bytes_read > 0)
+	{
+		for (i = 0; i < bytes_read; ++i)
+		{
+			putchar(buffer[i]);
+		}
+	}
+	close(ptr);
+	free(buffer);
+	return (bytes_read);
 }
