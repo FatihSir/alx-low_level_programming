@@ -28,20 +28,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (letters > 0)
 	{
 		bytes_read = read(ptr, buffer, letters);
-	}
-	if (bytes_read < -1)
-	{
-		free(buffer);
-		close(ptr);
-		return (0);
-	}
-	if (bytes_read > 0)
-	{
+		if (bytes_read == -1)
+		{
+			free(buffer);
+			close(ptr);
+			return (0);
+		}
 		buffer[bytes_read] = '\0';
 		if ((ssize_t)letters > bytes_read)
 			fprintf(stderr, "%s", buffer);
 		else
 			printf("%s", buffer);
+	}
+	else
+	{
+		bytes_read = 0;
 	}
 	close(ptr);
 	free(buffer);
