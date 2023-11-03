@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
 
 	int file;
-	char buffer[5];
+	char buffer[5], elf[1];
 	ssize_t bytes_read;
 
 
@@ -35,11 +35,10 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		return (98);
 	}
-	if (buffer[0] != 0x7F || buffer[1] != 'E' || buffer[2] != 'L' || buffer[3] != 'F')
-	{
-		dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
+	bytes_read = lseek(file, 1, SEEK_SET);
+	bytes_read = read(file, elf, 1);
+	if (elf[0] != 'E')
 		return (98);
-	}
 	close(file);
 	return (0);
 }
