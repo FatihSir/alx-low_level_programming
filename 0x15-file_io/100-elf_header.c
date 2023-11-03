@@ -33,7 +33,8 @@ int main(int argc, char *argv[])
 	if (bytes_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98); }
+		exit(98);
+	}
 	bytes_read = lseek(file, 1, SEEK_SET);
 	bytes_read = read(file, elf, 1);
 	if (elf[0] != 'E')
