@@ -7,9 +7,9 @@
 */
 int main(int argc, char *argv[])
 {
-	int file_from, file_to;
+	int file_from, file_to, wr;
 	char buffer[1024];
-	ssize_t bytes_read, wr;
+	ssize_t bytes_read = 1024;
 
 	if (argc != 3)
 	{
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]);
 		exit(99); }
-	while (bytes_read = 1024)
+	while (bytes_read == 1024)
 	{
 		bytes_read = read(file_from, buffer, sizeof(buffer));
 		if (bytes_read == -1)
