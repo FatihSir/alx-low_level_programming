@@ -20,29 +20,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 	ptr = open(filename, O_RDONLY);
-	if (ptr < 0)
-	{
-		free(buffer);
-		return (0);
-	}
 	if (letters > 0)
 	{
 		bytes_read = read(ptr, buffer, letters);
-		if (bytes_read == -1)
-		{
-			free(buffer);
-			close(ptr);
-			return (0);
-		}
-		buffer[bytes_read] = '\0';
-		if ((ssize_t)letters > bytes_read)
-			fprintf(stderr, "%s", buffer);
-		else
-			printf("%s", buffer);
+		write(STDOUT_FILENO, buffer, bytes_read);
 	}
-	else
+	if (bytes_read == -1)
 	{
-		bytes_read = 0;
+		free(buffer);
+		return (0);
 	}
 	close(ptr);
 	free(buffer);
