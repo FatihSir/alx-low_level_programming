@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98); }
-	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
 	if (file_to < 0)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]);
