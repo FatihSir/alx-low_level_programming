@@ -10,9 +10,13 @@
  */
 int main(void)
 {
+    int i = 0;
     hash_table_t *ht;
 
     ht = hash_table_create(1024);
+
+
     printf("%p\n", (void *)ht);
+    printf("%lu", ht->size);
     return (EXIT_SUCCESS);
 }
