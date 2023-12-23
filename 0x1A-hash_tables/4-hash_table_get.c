@@ -36,6 +36,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 				return (NULL);
 			return (value);
 		}
+		current_item = current_item->next;
 	}
 	return (NULL);
 }
