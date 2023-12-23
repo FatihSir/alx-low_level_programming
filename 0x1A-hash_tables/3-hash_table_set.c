@@ -26,16 +26,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		if (strcmp(ht->array[index]->key, key) == 0)
-		{
-			strcpy(ht->array[index] -> value, value);
-			return (1);
+		while (current_item)
+		{	if (strcmp(current_item->key, key) == 0)
+			{
+				current_item->value = strdup(value);
+				if (current_item->value == NULL)
+					return (0);
+				return (1);
+			}
+			current_item = current_item->next;
 		}
-		else
-		{
-			add_at_beg(&(ht->array[index]), item);
-			return (1);
-		}
+		item->next = ht->array[index];
+		ht->array[index] = item;
+		return (1);  
 	}
-	return (0);
 }

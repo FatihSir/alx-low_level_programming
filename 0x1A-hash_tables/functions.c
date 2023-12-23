@@ -19,11 +19,11 @@ hash_node_t *create_item(const unsigned char *key, const char *value)
 	item->value = (char *)malloc(strlen(value) + 1);
 	if (item->key == NULL | item->value == NULL)
 		return (NULL);
-	strcpy(item->key, (const char *) key);
-	strcpy(item->value, value);
+	item->key = strdup((const char *) key);
+	item->value = strdup(value);
 	item->next = NULL;
 	return (item);
-}
+} 
 /**
 * add_at_beg - a function to add a new node at the beginning of linked list
 *
