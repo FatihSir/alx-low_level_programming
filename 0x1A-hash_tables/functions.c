@@ -15,15 +15,16 @@ hash_node_t *create_item(const unsigned char *key, const char *value)
 	item = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (item == NULL)
 		return (NULL);
-	item->key = (char *)malloc(strlen((const char *)key) + 1);
-	item->value = (char *)malloc(strlen(value) + 1);
-	if (item->key == NULL | item->value == NULL)
-		return (NULL);
 	item->key = strdup((const char *) key);
+	if (item->key == NULL)
+	{
+		free(item);
+		return (NULL);
+	}
 	item->value = strdup(value);
 	item->next = NULL;
 	return (item);
-} 
+}
 /**
 * add_at_beg - a function to add a new node at the beginning of linked list
 *
