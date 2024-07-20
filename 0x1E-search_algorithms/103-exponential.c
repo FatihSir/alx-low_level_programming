@@ -1,5 +1,29 @@
 #include "search_algos.h"
 /**
+ * print_array - a function to print the content of an array
+ *
+ * @array: a pointer to the array to be printed
+ * @low: the index of the first element
+ * @high: the size of the array
+ *
+ * Return: returns nothing
+ */
+void print_array(int *array, size_t low, size_t high)
+{
+	size_t i;
+
+	printf("Searching in array: ");
+	for (i = low ; i <= high; ++i)
+	{
+		if (i >= high)
+		{
+			printf("%d\n", array[i]);
+			return;
+		}
+		printf("%d, ", array[i]);
+	}
+}
+/**
  * exp_binary_search - recursive helper function for binary search
  *
  * @array: a pointer to the first element of the array to search in
