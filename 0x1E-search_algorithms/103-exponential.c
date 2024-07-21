@@ -57,7 +57,7 @@ int exp_binary_search(int *array, size_t low, size_t high, int value)
  * @size: the number of elements in array
  * @value: the value to search for
  *
- * Returns: index of the searched element,
+ * Return: returns an index of the searched element,
  * or -1 if value is not present in array or if array is NULL
  */
 int exponential_search(int *array, size_t size, int value)
@@ -75,5 +75,8 @@ int exponential_search(int *array, size_t size, int value)
 		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
 		i *= 2;
 	}
+	if (i >= size || array[i] >= value)
+		printf("Value found between indexes [%lu] and [%lu]\n"
+			, i / 2, min(i, size - 1));
 	return (exp_binary_search(array, i / 2, min(size - 1, i), value));
 }
