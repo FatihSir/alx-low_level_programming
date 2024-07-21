@@ -49,8 +49,8 @@ int helper_advanced_binary(int *array, size_t low, size_t high, int value)
 			return (m);
 		return (helper_advanced_binary(array, low, m, value));
 	}
-	else if (array[m] > value)
-		return (helper_advanced_binary(array, low, m - 1, value));
+	else if (array[m] >= value)
+		return (helper_advanced_binary(array, low, m, value));
 	else
 		return (helper_advanced_binary(array, m + 1, high, value));
 }
